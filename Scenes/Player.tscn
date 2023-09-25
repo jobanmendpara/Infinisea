@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://daynfy2u8luq1"]
+
+[ext_resource type="Script" path="res://Scripts/Player.cs" id="1_8quwn"]
+[ext_resource type="PackedScene" uid="uid://dk3id0k7tx06g" path="res://Scenes/_components/HealthComponent.tscn" id="1_p4tda"]
+[ext_resource type="Texture2D" uid="uid://x22qtg86eikv" path="res://Imports/kenney_pirate-pack/PNG/Default size/Ships/ship (1).png" id="2_es4ns"]
+[ext_resource type="PackedScene" uid="uid://c6lwhso1mdqb8" path="res://Scenes/_components/MovementComponent.tscn" id="4_5jpln"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ljh4w"]
+radius = 17.0
+height = 90.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_8quwn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -1.5708
+texture = ExtResource("2_es4ns")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_ljh4w")
+
+[node name="HealthComponent" parent="." instance=ExtResource("1_p4tda")]
+
+[node name="MovementComponent" parent="." instance=ExtResource("4_5jpln")]

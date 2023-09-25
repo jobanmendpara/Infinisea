@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://dxwxsdx2im8v4"]
+
+[ext_resource type="PackedScene" uid="uid://dpiaa2b0lyvvd" path="res://Scenes/_managers/InputManager.tscn" id="1_k1hvf"]
+[ext_resource type="PackedScene" uid="uid://duaao7n6lk3qp" path="res://Scenes/_managers/GameManager.tscn" id="2_5m1ve"]
+[ext_resource type="Material" uid="uid://wowf8nvbtynv" path="res://Materials/water.tres" id="3_d3654"]
+[ext_resource type="Texture2D" uid="uid://c4i1nv1350m0d" path="res://Sprites/water.png" id="4_gxd3m"]
+
+[sub_resource type="SystemFont" id="SystemFont_mgb7o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v5yyn"]
+font = SubResource("SystemFont_mgb7o")
+font_size = 48
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+
+[node name="World" type="Node"]
+process_mode = 3
+
+[node name="Managers" type="Node" parent="."]
+
+[node name="GameManager" parent="Managers" instance=ExtResource("2_5m1ve")]
+
+[node name="InputManager" parent="Managers" instance=ExtResource("1_k1hvf")]
+
+[node name="Environment" type="Node" parent="."]
+process_mode = 1
+
+[node name="Water" type="Sprite2D" parent="Environment"]
+visible = false
+material = ExtResource("3_d3654")
+scale = Vector2(11.863, 7)
+texture = ExtResource("4_gxd3m")
+
+[node name="Actors" type="Node" parent="."]
+process_mode = 1
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="temp_Label" type="Label" parent="UI"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "temp_label"
+label_settings = SubResource("LabelSettings_v5yyn")

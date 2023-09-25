@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpiaa2b0lyvvd"]
+
+[ext_resource type="Script" path="res://Scripts/_managers/InputManager.cs" id="1_kxxlr"]
+
+[node name="InputManager" type="Node"]
+script = ExtResource("1_kxxlr")
