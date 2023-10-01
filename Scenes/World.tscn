@@ -26,7 +26,6 @@ process_mode = 3
 process_mode = 1
 
 [node name="Water" type="Sprite2D" parent="Environment"]
-visible = false
 material = ExtResource("3_d3654")
 scale = Vector2(11.863, 7)
 texture = ExtResource("4_gxd3m")
